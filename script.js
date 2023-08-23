@@ -21,6 +21,7 @@ function renderTasks() {
         <button class="editBtn" data-index="${index}">Edit</button>
         <button class="deleteBtn" data-index="${index}">Delete</button>
       </div>
+      <button class="updateBtn" style="display: none;" data-index="${index}">Update</button>
     `;
     taskList.appendChild(taskItem);
   });
@@ -68,31 +69,22 @@ taskList.addEventListener("click", (e) => {
     const taskItem = e.target.closest(".task-item");
     const span = taskItem.querySelector(".task-content span");
     const index = e.target.dataset.index;
-
     span.contentEditable = true;
     span.focus();
-
     const editButton = taskItem.querySelector(".editBtn");
     const deleteButton = taskItem.querySelector(".deleteBtn");
+    const updateButton = taskItem.querySelector(".updateBtn");
     editButton.style.display = "none";
     deleteButton.style.display = "none";
-
-    const updateButton = document.createElement("button");
-    updateButton.textContent = "Update";
-    updateButton.className = "updateBtn";
-
-    updateButton.addEventListener("click", () => {
-      tasks[index].text = span.textContent;
-      tasks[index].timestamp = getFormattedDateTime();
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-      renderTasks();
-      span.contentEditable = false;
-      taskItem.removeChild(updateButton);
-      editButton.style.display = "inline-block";
-      deleteButton.style.display = "inline-block";
-    });
-
-    taskItem.appendChild(updateButton);
+    updateButton.style.display = "inline-block";
+  } else if (e.target.classList.contains("updateBtn")) {
+    const taskItem = e.target.closest(".task-item");
+    const span = taskItem.querySelector(".task-content span");
+    const index = e.target.dataset.index;
+    tasks[index].text = span.textContent;
+    tasks[index].timestamp = getFormattedDateTime();
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    renderTasks();
   } else if (e.target.classList.contains("deleteBtn")) {
     const index = e.target.dataset.index;
     tasks.splice(index, 1);

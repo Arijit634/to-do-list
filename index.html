@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>To-Do List App</title>
-  </head>
-  <body>
-    <header>
-      <h1>To-Do List</h1>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Task Manager</title>
+</head>
+<body>
+  <header>
+    <h1>To-Do-List</h1>
     <div id="modeToggleContainer">
-      <button id="toggleMode" class="mode-switch"></button>
+      <button id="toggleMode" class="mode-switch" title="Toggle Dark Mode">🌞</button>
     </div>
-    <main>
-      <div id="taskInput">
-        <input type="text" id="newTask" placeholder="Add a new task">
-        <button id="addTask">Add</button>
-      </div>
-      <small id="validationMessage" class="error-message"></small>
-      <ul id="taskList"></ul>
-    </main>
-    <script src="script.js"></script>
-  </body>
+  </header>
+  <main>
+    <div id="taskInput">
+      <input type="text" id="newTask" placeholder="Enter a new task">
+      <button id="addTask">Add Task</button>
+    </div>
+    <div id="validationMessage"></div>
+    <ul id="taskList"></ul>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>

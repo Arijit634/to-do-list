@@ -50,9 +50,18 @@ li {
   border: 1px solid #ccc;
   padding: 1rem;
   margin-bottom: 0.5rem; 
+  position: relative;
+}
+.task-item .task-buttons {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .task-content {
   flex: 1;
+  word-wrap: break-word;
+  max-width: calc(100% - 180px);
 }
 
 .task-buttons {
@@ -116,8 +125,11 @@ button.updateBtn {
   display: inline-block;
   min-width: 100px;
   word-break: break-word;
+  max-width: calc(100% - 180px);
 }
 
 .task-content span[contenteditable="true"]:focus {
   border-color: #007bff;
 }
+
+
