@@ -27,6 +27,16 @@ li {
   padding: 0.5rem 0;
 }
 
+#addTask{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: #28a745;
+}
+
 #taskInput {
   display: flex;
   gap: 1rem;
@@ -54,10 +64,38 @@ input[type="text"] {
   flex: 1;
   padding: 0.5rem;
 }
+.mode-switch {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+#modeToggleContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 button {
-  padding: 0.5rem 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+button.editBtn {
+  background-color: #007bff;
+}
+
+button.deleteBtn {
+  background-color: #dc3545;
+}
+
+button.updateBtn {
+  background-color: #28a745;
 }
 
 .dark-mode {

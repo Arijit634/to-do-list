@@ -9,15 +9,16 @@
   <body>
     <header>
       <h1>To-Do List</h1>
-      <button id="toggleMode">Toggle Mode</button>
     </header>
+    <div id="modeToggleContainer">
+      <button id="toggleMode" class="mode-switch"></button>
+    </div>
     <main>
       <div id="taskInput">
-        <input type="text" id="newTask" placeholder="Add a new task" />
+        <input type="text" id="newTask" placeholder="Add a new task">
         <button id="addTask">Add</button>
       </div>
       <small id="validationMessage" class="error-message"></small>
-
       <ul id="taskList"></ul>
     </main>
     <script src="script.js"></script>

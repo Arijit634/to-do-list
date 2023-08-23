@@ -34,6 +34,10 @@ function getFormattedDateTime() {
 
 function toggleMode() {
   document.body.classList.toggle("dark-mode", isDarkMode);
+  document.body.classList.toggle("light-mode", !isDarkMode);
+  toggleModeButton.classList.toggle("dark-mode", isDarkMode);
+  toggleModeButton.classList.toggle("light-mode", !isDarkMode);
+  toggleModeButton.textContent = isDarkMode ? "🌞" : "🌙";
   localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
 }
 
