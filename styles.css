@@ -115,6 +115,7 @@ button.updateBtn {
   outline: none;
   display: inline-block;
   min-width: 100px;
+  word-break: break-word;
 }
 
 .task-content span[contenteditable="true"]:focus {
