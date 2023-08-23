@@ -3,16 +3,15 @@ var newTaskInput=document.getElementById("newTask");
 var addTaskButton=document.getElementById("addTask");
 var toggleModeButton=document.getElementById("toggleMode");
 var validationMessage=document.getElementById("validationMessage");
-
 var tasks=JSON.parse(localStorage.getItem("tasks"))||[];
 var isDarkMode=JSON.parse(localStorage.getItem("isDarkMode"))||false;
 
-function renderTasks(){
-  taskList.innerHTML="";
-  tasks.forEach(function(taskObj,index){
-    var taskItem=document.createElement("li");
-    taskItem.className="task-item";
-    taskItem.innerHTML='<div class="task-content"><span>'+taskObj.text+'</span><small>'+taskObj.timestamp+'</small></div><div class="task-buttons"><button class="editBtn" data-index="'+index+'">Edit</button><button class="deleteBtn" data-index="'+index+'">Delete</button></div><button class="updateBtn" style="display: none;" data-index="'+index+'">Update</button>';
+function renderTasks() {
+  taskList.innerHTML = "";
+  tasks.forEach(function (taskObj, index) {
+    var taskItem = document.createElement("li");
+    taskItem.className = "task-item";
+    taskItem.innerHTML = '<div class="task-content"><span>' + taskObj.text + '</span><br><small>' + taskObj.timestamp + '</small></div><div class="task-buttons"><button class="editBtn" data-index="' + index + '">Edit</button><button class="deleteBtn" data-index="' + index + '">Delete</button></div><button class="updateBtn" style="display: none;" data-index="' + index + '">Update</button>';
     taskList.appendChild(taskItem);
   });
 }
