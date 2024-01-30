@@ -76,9 +76,12 @@ taskList.addEventListener("click",function(e){
     renderTasks();
   } else if(e.target.classList.contains("deleteBtn")) {
     var index=e.target.dataset.index;
-    tasks.splice(index,1);
-    localStorage.setItem("tasks",JSON.stringify(tasks));
-    renderTasks();
+    var isConfirmed=confirm("Are you sure you want to delete this task?");
+    if (isConfirmed){
+      tasks.splice(index,1);
+      localStorage.setItem("tasks",JSON.stringify(tasks));
+      renderTasks();
+    }
   }
 });
 
